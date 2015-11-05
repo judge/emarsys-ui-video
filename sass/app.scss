@@ -1,0 +1,253 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+$bg: darken(#002838, 3%);
+$skinDark: #E7AE9A;
+$skinLight: #EFBAAA;
+$nipples: #E79A9A;
+$headColor: #E79E8A;
+$bear: #612410;
+$blue: #3D5E8C;
+$time: 4.5s;
+$shirt-color: green;
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  background: $bg;
+    overflow: hidden;
+}
+
+#m1,
+#m2,
+#m3 {
+  position: absolute;
+  left: -100px;
+  bottom: 125px;
+  transition: all 4s linear;
+  transition-duration: 4s;
+}
+
+.e {
+  &-video {
+    height: 100%;
+    padding: 20px 40px;
+    width: 100%;
+  }
+
+  &-man {
+    position: relative;
+    transition: all 4s linear;
+    width: 60px;
+
+    &__head {
+      background: $headColor;
+      border-radius: 30px 30px 30px 25px;
+      height: 70px;
+      position: relative;
+      top: 0;
+      left: 6px;
+      transform-origin: bottom center;
+      width: 50px;
+      z-index: 2;
+
+      &:before {
+        background: $headColor;
+        border-radius: 50%;
+        box-shadow: 52px 0 0 $headColor;
+        content: '';
+        height: 11px;
+        margin-left: -7px;
+        margin-top: 22px;
+        position: absolute;
+        width: 11px;
+      }
+    }
+
+    &__body {
+      position: relative;
+      width: 60px;
+      height: 110px;
+      background: $skinLight;
+      top: 5px;
+      left: 0;
+      z-index: 1;
+      box-shadow: inset 20px 0 0 $skinDark;
+      border-radius: 10%;
+
+      &:after {
+        content: '';
+        position: absolute;
+        width: 60px;
+        height: 110px;
+        background: $shirt-color;
+        border-radius: 5px;
+      }
+
+      &:before {
+        content:"";
+        width: 20px;
+        height: 20px;
+        background: $skinDark;
+        border-radius: 5%;
+        position: absolute;
+        margin-bottom: -30px;
+        top: -20px;
+        left: calc(50% - 10px);
+        box-shadow:inset -10px 0px 0px $skinLight;
+        transform-origin: bottom center;
+      }
+    }
+
+    &__arm {
+      width: 60px;
+      height: 20px;
+      position: absolute;
+      background: $headColor;
+      border-radius: 30px 0px 0px 30px;
+      transform-origin: 8px 50%;
+      z-index: 2;
+
+      &:after {
+        background: $shirt-color;
+        border-radius: 30px 0px 0px 30px;
+        content: '';
+        height: 25px;
+        position: absolute;
+        width: 40px;
+      }
+
+      &-right {
+        transform: scaleX(-1) rotate(50deg);
+      }
+
+      &-left {
+        transform: rotate(50deg);
+        left: 45px;
+        top: 0px;
+      }
+    }
+
+    &__bottomarm {
+      position: absolute;
+      border-radius: 30px 0px 0px 30px;
+      background: $headColor;
+      width: 50px;
+      height: 20px;
+      transform-origin: 8px 50%;
+      transform: rotate(40deg);
+      top: 0;
+      left: 50px;
+
+      &:after {
+        content: '';
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background: $headColor;
+        position: absolute;
+        box-shadow: inset -5px 0 0 darken($headColor, 5%);
+        right: -15px;
+      }
+    }
+
+    &__pants {
+      width: 60px;
+      height: 30px;
+      background: $blue;
+      border-radius: 0 0 30px 30px;
+      box-shadow: inset -11px -5px 0 #2E4A72;
+      position: relative;
+      left: 0;
+    }
+
+    &__legs {
+      position: relative;
+    }
+
+    &__leg {
+      background: $blue;
+      height: 120px;
+      position: absolute;
+      top: 15px;
+      transform-origin: 0 0;
+      width: 18px;
+
+      &:before {
+        content: '';
+        position: absolute;
+        height: 8px;
+        width: 12px;
+        left: 3px;
+        background: $skinLight;
+        bottom: -8px;
+      }
+
+      &:after {
+        background: $skinLight;
+        bottom: -20px;
+        content: '';
+        height: 12px;
+        position: absolute;
+        width: 28px;
+      }
+
+      &-left {
+        right: 5px;
+        background: #2E4A72;
+        transform: rotate(0deg);
+
+        &:after {
+          left: 3px;
+          border-radius: 0 10px 10px 0;
+        }
+      }
+
+      &-right {
+        left: 5px;
+        transform: rotate(0deg);
+
+        &:after {
+          right: 3px;
+          border-radius: 10px 0 0 10px;
+        }
+      }
+    }
+
+    &-walk {
+      animation: walk .3s linear infinite;
+      transform-origin: 50% 100%;
+
+      .e-man__leg-left {
+        transform: rotate(-5deg);
+      }
+
+      .e-man__leg-right {
+        transform: rotate(5deg);
+      }
+    }
+  }
+}
+
+@keyframes walk {
+  0% {
+    transform: rotate(0);
+  }
+  25% {
+    transform: rotate(-5deg);
+  }
+  75% {
+    transform: rotate(5deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
