@@ -13,6 +13,7 @@ $bear: #612410;
 $blue: #3D5E8C;
 $time: 4.5s;
 $shirt-color: green;
+$bubble-background: darken(#fff, 20%);
 
 html, body {
   height: 100%;
@@ -20,23 +21,85 @@ html, body {
 }
 
 body {
+  background: $bg;
   font-family: Arial, sans-serif;
   font-size: 16px;
-  background: $bg;
-    overflow: hidden;
+  overflow: hidden;
 }
 
 #m1,
 #m2,
 #m3 {
-  position: absolute;
-  left: -100px;
   bottom: 125px;
-  transition: all 4s linear;
+  left: -100px;
+  position: absolute;
   transition-duration: 4s;
+  transition: all 4s linear;
+}
+
+h1 {
+  color: #fff;
+  font-size: 400%;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  text-align: center;
+  top: 20px;
+  width: 100%;
+  z-index: 1;
 }
 
 .e {
+  &-canvas {
+    width: calc(100% - 600px);
+    top: 0;
+    right: 0;
+    height: 100%;
+    position: absolute;
+  }
+
+  &-textbox {
+    display: none;
+    background: $bubble-background;
+    position: absolute;
+    width: 480px;
+    height: 300px;
+    bottom: 380px;
+    padding: 30px;
+    font-size: 200%;
+    line-height: 1.5em;
+    border-radius: 20px;
+
+    &:after {
+      border-color: transparent $bubble-background;
+      border-style: solid;
+      border-width: 0 20px 30px 0px;
+      bottom: -30px;
+      content: "";
+      display: block;
+      position: absolute;
+      width: 0;
+    }
+
+    &-first {
+      &:after {
+        left: 50px;
+      }
+    }
+
+    &-middle {
+      &:after {
+        left: 210px;
+      }
+    }
+
+    &-last {
+      &:after {
+        left: 370px;
+      }
+    }
+  }
+
   &-video {
     height: 100%;
     padding: 20px 40px;
