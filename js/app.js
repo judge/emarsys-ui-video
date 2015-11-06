@@ -77,10 +77,12 @@ x.add(function() {
 
 x.add(function() {
   speak('Régen ilyen volt suite', 1);
+  $('#screenshot1').addClass('e-canvas__slide-show');
 }, 2000);
 
 x.add(function() {
   speak('Jöttünk mi, és ilyen lett', 1);
+  $('#screenshot2').addClass('e-canvas__slide-show');
 }, 5000);
 
 x.add(function() {
@@ -103,8 +105,6 @@ x.add(function() {
   standby(3);
   console.timeEnd('video');
 }, 3000);
-
-x.run();
 
 $('#start').on('click', function() {
   $(this).hide();
