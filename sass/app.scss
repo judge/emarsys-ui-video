@@ -16,6 +16,12 @@ $time: 4.5s;
 $shirt-color: green;
 $bubble-background: darken(#fff, 20%);
 
+$jdg: (
+  'head': url(../jdg.png),
+  'shirt-color': gray,
+  'trousers-color': #003270
+);
+
 html, body {
   height: 100%;
   margin: 0;
@@ -97,7 +103,6 @@ h1 {
     background: $bubble-background;
     position: absolute;
     width: 560px;
-    height: 110px;
     bottom: 450px;
     padding: 30px;
     font-size: 200%;
@@ -291,7 +296,7 @@ h1 {
       height: 30px;
       background: $blue;
       border-radius: 0 0 30px 30px;
-      box-shadow: inset -11px -5px 0 #2E4A72;
+      box-shadow: inset -11px -5px 0 darken($blue, 10%);
       position: relative;
       left: 0;
     }
@@ -345,6 +350,60 @@ h1 {
         &:after {
           right: 3px;
           border-radius: 10px 0 0 10px;
+        }
+      }
+    }
+
+    &-jdg {
+      &:before {
+        content: 'UI team';
+        text-align: center;
+        left: 2px;
+        padding: 10px;
+        position: absolute;
+        top: 170px;
+        z-index: 2;
+      }
+
+      .e-man {
+        &__body,
+        &__arm {
+          &:after {
+            background: map-get($jdg, 'shirt-color');
+          }
+
+        }
+
+        &__pants,
+        &__leg {
+          background: map-get($jdg, 'trousers-color');
+        }
+
+        &__pants {
+          box-shadow: inset -11px -5px 0 darken(map-get($jdg, 'trousers-color'), 5%);
+        }
+
+        &__leg-left {
+          background: darken(map-get($jdg, 'trousers-color'), 5%);
+        }
+
+        &__head {
+          background: map-get($jdg, 'head');
+          background-size: 81px;
+          width: 81px;
+          left: -12px;
+
+          &:before,
+          &:after {
+            left: 30px;
+            width: 24px;
+          }
+
+          &:after {
+            background: url(../jdg.png) -30px -113px;
+            background-size: 81px;
+            bottom: 0px;
+          }
         }
       }
     }
