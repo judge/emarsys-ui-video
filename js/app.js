@@ -107,6 +107,8 @@ x.add(function() {
 }, 3000);
 
 $('#start').on('click', function() {
+  var music = new Audio('../tetris.mp3');
+  music.play();
   $(this).hide();
   x.run();
 });
