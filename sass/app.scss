@@ -22,6 +22,12 @@ $jdg: (
   'trousers-color': #003270
 );
 
+$d1: (
+  'head': url(../d1.png),
+  'shirt-color': gray,
+  'trousers-color': #003270
+);
+
 html, body {
   height: 100%;
   margin: 0;
@@ -408,6 +414,52 @@ h1 {
       }
     }
 
+    &-d1 {
+      .e-man {
+        &__head {
+          background: map-get($d1, 'head');
+          background-size: 104px;
+          width: 103px;
+          left: -12px;
+
+          &:before,
+          &:after {
+            left: 55px;
+            width: 25px;
+          }
+
+          &:before {
+            bottom: 31px;
+          }
+
+          &:after {
+            background: url(../d1.png) -58px -105px;
+            background-size: 104px;
+            bottom: 0px;
+            height: 45px;
+          }
+        }
+        &__body {
+          width: 80px;
+          left: -10px;
+
+          &:after {
+            width: 80px;
+          }
+        }
+
+        &__arm-left {
+          left: 66px;
+        }
+      }
+
+      &.e-man-speak {
+        .e-man__head {
+          //animation: shake-and-rotate 2400ms infinite ease-in-out;
+        }
+      }
+    }
+
     &-walk {
       animation: walk .3s linear infinite;
       transform-origin: 50% 100%;
@@ -462,48 +514,62 @@ h1 {
 }
 
 @keyframes dance-body {
-  0% { top: 0px; }
+  0% { top: 0; }
   50% { top: 20px; }
-  100% { top: 0px; }
+  100% { top: 0; }
 }
 
 @keyframes dance-head {
-  0% { transform: rotate(0); }
-  25% { transform: rotate(10deg); }
-  75% { transform: rotate(-10deg); }
-  100% { transform: rotate(0); }
+  0% { transform: rotate(0deg) }
+  25% { transform: rotate(10deg) }
+  75% { transform: rotate(-10deg) }
+  100% { transform: rotate(0deg) }
 }
 
 @keyframes dance-leg {
-  0% { height: 120px; }
-  50% { height: 100px; }
-  100% { height: 120px; }
+  0% { height: 120px }
+  50% { height: 100px }
+  100% { height: 120px }
 }
 
 @keyframes dance-arm-left {
-  0% { transform: rotate(50deg); }
-  25% { transform: rotate(60deg); }
-  75% { transform: rotate(20deg); }
-  100% { transform: rotate(50deg); }
+  0% { transform: rotate(50deg) }
+  25% { transform: rotate(60deg) }
+  75% { transform: rotate(20deg) }
+  100% { transform: rotate(50deg) }
 }
 
 @keyframes dance-arm-right {
-  0% { transform: rotate(130deg); }
-  25% { transform: rotate(160deg); }
-  75% { transform: rotate(100deg); }
-  100% { transform: rotate(130deg); }
+  0% { transform: rotate(130deg) }
+  25% { transform: rotate(160deg) }
+  75% { transform: rotate(100deg) }
+  100% { transform: rotate(130deg) }
 }
 
 @keyframes walk {
-  0% { transform: rotate(0); }
-  25% { transform: rotate(-5deg); }
-  75% { transform: rotate(5deg); }
-  100% { transform: rotate(0deg); }
+  0% { transform: rotate(0deg) }
+  25% { transform: rotate(-5deg) }
+  75% { transform: rotate(5deg) }
+  100% { transform: rotate(0deg) }
 }
 
 @keyframes shake {
   0% {transform: rotate(-7deg)}
   50% {transform: rotate(7deg)}
+  100% {transform: rotate(-7deg)}
+}
+
+@keyframes shake-and-rotate {
+  0% {transform: rotate(-7deg)}
+  10% {transform: rotate(7deg)}
+  20% {transform: rotate(-7deg)}
+  30% {transform: rotate(-7deg)}
+  40% {transform: rotate(7deg)}
+  50% {transform: rotate(-7deg)}
+  60% {transform: rotate(-7deg)}
+  70% {transform: rotate(7deg)}
+  80% {transform: rotate(-7deg)}
+  90% {transform: rotate(-7deg)}
   100% {transform: rotate(-7deg)}
 }
 
@@ -520,6 +586,7 @@ h1 {
   90% {transform: translate3d(0,10px,0)}
   100% {transform: translate3d(0,0,0)}
 }
+
 
 @keyframes speak-arm {
   0% { transform: rotate(-30deg) }
