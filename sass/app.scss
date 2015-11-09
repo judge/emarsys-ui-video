@@ -647,7 +647,7 @@ $animation-time: 4s;
     opacity: 1;
   }
   90% {
-    transform: translateY(80vh);
+    transform: translateY(calc(100vh - 200px));
   }
 }
 
