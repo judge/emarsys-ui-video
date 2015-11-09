@@ -44,7 +44,7 @@ body {
 #m2,
 #m3 {
   bottom: 125px;
-  left: -100px;
+  left: -134px;
   position: absolute;
   transition: all 4s linear;
 }
@@ -455,7 +455,7 @@ h1 {
 
       &.e-man-speak {
         .e-man__head {
-          //animation: shake-and-rotate 2400ms infinite ease-in-out;
+          animation: shake-and-rotate 6000ms infinite ease-in-out;
         }
       }
     }
@@ -561,16 +561,30 @@ h1 {
 
 @keyframes shake-and-rotate {
   0% {transform: rotate(-7deg)}
-  10% {transform: rotate(7deg)}
+  5% {transform: rotate(7deg)}
+  10% {transform: rotate(-7deg)}
+  15% {transform: rotate(7deg)}
   20% {transform: rotate(-7deg)}
+  25% {transform: rotate(7deg)}
   30% {transform: rotate(-7deg)}
-  40% {transform: rotate(7deg)}
+  35% {transform: rotate(7deg)}
+  40% {transform: rotate(-7deg)}
+  45% {transform: rotate(7deg)}
   50% {transform: rotate(-7deg)}
-  60% {transform: rotate(-7deg)}
-  70% {transform: rotate(7deg)}
-  80% {transform: rotate(-7deg)}
-  90% {transform: rotate(-7deg)}
-  100% {transform: rotate(-7deg)}
+  52.4% {transform: rotate(0deg) scale(1, 1)}
+  52.5% {transform: rotate(0deg) scale(-1, 1)}
+  55% {transform: rotate(-7deg) scale(-1, 1)}
+  60% {transform: rotate(7deg) scale(-1, 1)}
+  65% {transform: rotate(-7deg) scale(-1, 1)}
+  70% {transform: rotate(7deg) scale(-1, 1)}
+  75% {transform: rotate(-7deg) scale(-1, 1)}
+  80% {transform: rotate(7deg) scale(-1, 1)}
+  82.4% {transform: rotate(0deg) scale(-1, 1)}
+  82.5% {transform: rotate(0deg) scale(1, 1)}
+  85% {transform: rotate(-7deg)}
+  90% {transform: rotate(7deg)}
+  95% {transform: rotate(-7deg)}
+  100% {transform: rotate(7deg)}
 }
 
 @keyframes speak {
