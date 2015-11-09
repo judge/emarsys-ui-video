@@ -445,11 +445,21 @@ h1 {
 
           &:after {
             width: 80px;
+            background: linear-gradient( to bottom, #0f3a56, #0f3a56 90%, #fff 90%, #fff );
+            background-size: 100% 12px;
           }
         }
 
-        &__arm-left {
-          left: 66px;
+        &__arm {
+          &:after {
+            background: linear-gradient( to right, #0f3a56, #0f3a56 80%, #fff 80%, #fff );
+            background-size: 10px 100%;
+            border-radius: 9px 0 0 9px;
+          }
+
+          &-left {
+            left: 66px;
+          }
         }
       }
 
