@@ -87,10 +87,13 @@ x.add(function() {
 
 x.add(function() {
   standby(1);
+  $('#screenshot1').removeClass('e-canvas__slide-show');
+  $('#screenshot2').removeClass('e-canvas__slide-show');
 }, 5000);
 
 x.add(function() {
   speak('Ezeket a technológiákat használjuk', 2);
+  $('#technologies').addClass('e-canvas__slide-show');
 }, 2000);
 
 x.add(function() {

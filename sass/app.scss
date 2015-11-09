@@ -5,7 +5,7 @@
   // border-radius: 0 !important;
 }
 
-$bg: darken(#002838, 3%);
+$bg: #03131F;
 $skinDark: #E7AE9A;
 $skinLight: #EFBAAA;
 $nipples: #E79A9A;
@@ -24,6 +24,12 @@ $jdg: (
 
 $d1: (
   'head': url(../d1.png),
+  'shirt-color': gray,
+  'trousers-color': #003270
+);
+
+$d2: (
+  'head': url(../d2alien.png),
   'shirt-color': gray,
   'trousers-color': #003270
 );
@@ -377,7 +383,6 @@ h1 {
           &:after {
             background: map-get($jdg, 'shirt-color');
           }
-
         }
 
         &__pants,
@@ -395,20 +400,23 @@ h1 {
 
         &__head {
           background: map-get($jdg, 'head');
-          background-size: 81px;
-          width: 81px;
+          background-size: 90px;
+          height: 165px;
           left: -12px;
+          width: 90px;
 
           &:before,
           &:after {
-            left: 30px;
-            width: 24px;
+            bottom: 18px;
+            left: 33px;
+            width: 28px;
           }
 
           &:after {
-            background: url(../jdg.png) -30px -113px;
-            background-size: 81px;
-            bottom: 0px;
+            background: url(../jdg.png) -33px -132px;
+            background-size: 90px;
+            bottom: 0;
+            height: 32px;
           }
         }
       }
@@ -470,6 +478,34 @@ h1 {
       }
     }
 
+    &-d2 {
+      .e-man {
+        &__head {
+          background: map-get($d2, 'head') 0 10px no-repeat;
+          background-size: 90px;
+          width: 103px;
+          left: -15px;
+
+          &:before,
+          &:after {
+            left: 33px;
+            width: 29px;
+          }
+
+          &:before {
+            bottom: 22px;
+          }
+
+          &:after {
+            background: url(../d2alien.png) -33px -104px;
+            background-size: 90px;
+            bottom: 2px;
+            height: 34px;
+          }
+        }
+      }
+    }
+
     &-walk {
       animation: walk .3s linear infinite;
       transform-origin: 50% 100%;
@@ -520,6 +556,98 @@ h1 {
         animation: dance-leg .5s linear infinite;
       }
     }
+  }
+}
+
+$color1: #0e83cd;
+$color2: white;
+$animation-time: 4s;
+
+.cloud{
+  position: absolute;
+  top: 170px;
+  left: 50%;
+  width: 350px;
+  height: 160px;
+  transform: translate(-50%, -50%);
+
+  .puffs {
+    animation: cloud $animation-time 0s infinite normal both;
+    top: 0;
+    border-radius: 50% 50% 50% 50%;
+    left: 0;
+    background: $color2;
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    box-shadow: 75px 0 white, 150px 0 white, 225px 0 white,
+    #{12.5px*3} #{-7.5px*3} darken($color2, 4), #{37.5px*3} #{-7.5px*3} darken($color2, 4), #{62.5px*3} #{-7.5px*3} darken($color2, 4),
+    #{12.5px*3} #{7.5px*3} darken($color2, 4), #{37.5px*3} #{7.5px*3} darken($color2, 4), #{62.5px*3} #{7.5px*3} darken($color2, 4),
+    #{25px*3} #{-15px*3} darken($color2, 8), #{50px*3} #{-15px*3} darken($color2, 8),
+    #{25px*3} #{15px*3} darken($color2, 8), #{50px*3} #{15px*3} darken($color2, 8);
+  }
+  .rain .drop {
+    width: 100px;
+    height: 100px;
+    //border-radius: 50%;
+    //background: darken($color1, 8);
+    position: absolute;
+    z-index: -2;
+    opacity: 0;
+
+    img {
+      max-width: 100%;
+    }
+
+    @for $i from 0 through 15 {
+      &:nth-child(#{$i}) {
+        animation: rain 2s #{$i*300}ms infinite normal both;
+        left: 20px*$i;
+      }
+    }
+  }
+  &-first {
+    margin-left: -300px;
+    opacity: 0.97;
+
+    .puffs {
+      animation: cloud $animation-time 1s infinite normal both;
+    }
+  }
+
+  &-last {
+    margin-left: 250px;
+    opacity: 0.9;
+
+    .puffs {
+      animation: cloud $animation-time 3s infinite normal both;
+    }
+  }
+}
+
+
+@keyframes cloud {
+
+  35% {
+    left: -5%;
+  }
+
+  50% {
+    transform: translateY(-12px);
+  }
+
+}
+
+@keyframes rain {
+  10% {
+    opacity: 1;
+  }
+
+  30% {
+    opacity: 1;
+  }
+  90% {
+    transform: translateY(80vh);
   }
 }
 
