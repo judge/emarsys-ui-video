@@ -101,7 +101,9 @@ x.add(function() {
 }, 3000);
 
 x.add(function() {
+  $('#technologies').removeClass('e-canvas__slide-show');
   speak('Mi majdnem az összes csapattal kapcsolatban vagyunk', 3);
+  $('#bubbles').addClass('e-canvas__slide-show');
 }, 10000);
 
 x.add(function() {

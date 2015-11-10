@@ -626,6 +626,136 @@ $animation-time: 4s;
 }
 
 
+$bubble-delays: 1.6s, 2.15s, 1s, 2s, 2.2s, 1.4s, 2.25s, 1.8s, 1.7s, .5s, 1.9s, 2.1s;
+
+$bubbles: (
+  (1.6s, 31px, 269px, 100px),
+  (2.15s, 217px, -239px, 100px),
+  (2.1s, 268px, 80px, 100px),
+  (2s, -50px, 408px, 123px),
+  (2.2s, -158px, 241px, 123px),
+  (1.4s, 392px, 20px, 100px),
+  (2.25s, 296px, -170px, 144px),
+  (1.8s, -182px, 85px, 140px),
+  (1.7s, 287px, 227px, 153px),
+  (.5s, 176px, 344px, 100px),
+  (1.9s, -110px, -110px, 100px),
+  (2.2s, -17px, -268px, 173px),
+  (2.1s, -243px, -42px, 109px),
+  (1s, 138px, -127px, 100px),
+);
+
+#bubbles {
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  .bubble {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: #fff;
+    opacity: 0;
+    transform: scale(0);
+    border-radius: 50%;
+  }
+
+  .bubble-main {
+    width: 240px;
+    height: 240px;
+    bottom: 0;
+    left: 0;
+    top: 0;
+    right: 0;
+    margin: auto;
+    opacity: 1 !important;
+    transform: scale(1);
+  }
+
+  &.e-canvas__slide-show {
+    .bubble .bubble {
+      $i: 0;
+      @each $delay, $top, $left, $size in $bubbles {
+        $i: $i+1;
+        &:nth-child(#{$i}) {
+          width: $size;
+          height: $size;
+          top: $top;
+          left: $left;
+          animation: bubble 1s $delay + 2s linear forwards;
+        }
+      }
+    }
+  }
+}
+
+@keyframes bubble {
+  0% {transform: scale(0);}
+  1% {transform: scale(0.09);}
+  2% {transform: scale(0.2);}
+  3% {transform: scale(0.34);}
+  4% {transform: scale(0.49);}
+  5% {transform: scale(0.65);}
+  6% {transform: scale(0.8);}
+  7% {transform: scale(0.94);}
+  8% {opacity:1; transform: scale(1.06);}
+  9% {transform: scale(1.17);}
+  10% {transform: scale(1.25);}
+  11% {transform: scale(1.31);}
+  12% {transform: scale(1.35);}
+  13% {transform: scale(1.37);}
+  14% {transform: scale(1.37);}
+  15% {transform: scale(1.35);}
+  16% {transform: scale(1.32);}
+  17% {transform: scale(1.28);}
+  18% {transform: scale(1.23);}
+  19% {transform: scale(1.18);}
+  20% {transform: scale(1.13);}
+  21% {transform: scale(1.07);}
+  22% {transform: scale(1.02);}
+  23% {transform: scale(0.98);}
+  24% {transform: scale(0.94);}
+  25% {transform: scale(0.91);}
+  26% {transform: scale(0.89);}
+  27% {transform: scale(0.88);}
+  28% {transform: scale(0.87);}
+  29% {transform: scale(0.87);}
+  30% {transform: scale(0.88);}
+  31% {transform: scale(0.89);}
+  32% {transform: scale(0.9);}
+  33% {transform: scale(0.92);}
+  34% {transform: scale(0.94);}
+  35% {transform: scale(0.96);}
+  36% {transform: scale(0.97);}
+  37% {transform: scale(0.99);}
+  38% {transform: scale(1.01);}
+  39% {transform: scale(1.02);}
+  40% {transform: scale(1.03);}
+  41% {transform: scale(1.04);}
+  42% {transform: scale(1.04);}
+  43% {transform: scale(1.05);}
+  45% {transform: scale(1.04);}
+  47% {transform: scale(1.04);}
+  48% {transform: scale(1.03);}
+  49% {transform: scale(1.02);}
+  50% {transform: scale(1.02);}
+  51% {transform: scale(1.01);}
+  52% {transform: scale(1);}
+  53% {transform: scale(1);}
+  54% {transform: scale(0.99);}
+  56% {transform: scale(0.99);}
+  57% {transform: scale(0.98);}
+  60% {transform: scale(0.98);}
+  61% {transform: scale(0.99);}
+  65% {transform: scale(0.99);}
+  66% {transform: scale(1);}
+  72% {transform: scale(1.01);}
+  76% {transform: scale(1.01);}
+  77% {transform: scale(1);}
+  100% {opacity:1; transform: scale(1);}
+}
+
+
 @keyframes cloud {
 
   35% {
