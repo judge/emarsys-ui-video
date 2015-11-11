@@ -634,13 +634,13 @@ $bubbles: (
   (2.1s, 268px, 80px, 100px),
   (2s, -50px, 408px, 123px),
   (2.2s, -158px, 241px, 123px),
-  (1.4s, 392px, 20px, 100px),
+  (3s, 392px, 20px, 100px),
   (2.25s, 296px, -170px, 144px),
   (1.8s, -182px, 85px, 140px),
   (1.7s, 287px, 227px, 153px),
   (.5s, 176px, 344px, 100px),
   (1.9s, -110px, -110px, 100px),
-  (2.2s, -17px, -268px, 173px),
+  (1.4s, -17px, -268px, 173px),
   (2.1s, -243px, -42px, 109px),
   (1s, 138px, -127px, 100px),
 );
@@ -651,6 +651,7 @@ $bubbles: (
   height: 100%;
 
   .bubble {
+    font-size: 18px;
     position: absolute;
     width: 100px;
     height: 100px;
@@ -658,9 +659,24 @@ $bubbles: (
     opacity: 0;
     transform: scale(0);
     border-radius: 50%;
+
+    &:after {
+      content: attr(data-team);
+      font-weight: bold;
+      top: 50%;
+      left: 50%;
+      position: absolute;
+      text-align: center;
+      transform: translate(-50%, -50%);
+    }
+
+    &-more {
+      font-size: 33px;
+    }
   }
 
   .bubble-main {
+    font-size: 50px;
     width: 240px;
     height: 240px;
     bottom: 0;
@@ -678,11 +694,12 @@ $bubbles: (
       @each $delay, $top, $left, $size in $bubbles {
         $i: $i+1;
         &:nth-child(#{$i}) {
+          background: adjust-hue(#fdf560, 30deg * $i);
           width: $size;
           height: $size;
           top: $top;
           left: $left;
-          animation: bubble 1s $delay + 2s linear forwards;
+          animation: bubble 1s $delay + 3s linear forwards;
         }
       }
     }
