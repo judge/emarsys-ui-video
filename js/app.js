@@ -35,6 +35,7 @@ TimedQueue.prototype = {
 };
 
 var x = new TimedQueue();
+
 var starthere = true;
 
 console.time('video');
@@ -106,13 +107,25 @@ x.add(function() {
   $('#bubbles').addClass('e-canvas__slide-show');
   setTimeout(function() {
     $('#m4').addClass('active');
-    }, 6100);
-}, 10000);
+    }, 6500);
+}, 5000);
 
 x.add(function() {
   standby(3);
-  console.timeEnd('video');
-}, 3000);
+}, 4000);
+
+x.add(function() {
+  $('#bubbles').removeClass('e-canvas__slide-show');
+}, 6000);
+
+x.add(function() {
+  standby(4);
+  $('#m1, #m2, #m3, #m4').addClass('e-dance-hardcore');
+}, 1000);
+
+x.add(function() {
+  $('#end').addClass('active');
+}, 13000);
 
 $('#start').on('click', function() {
   var music = new Audio('../tetris.mp3');
