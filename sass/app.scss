@@ -578,6 +578,29 @@ h2 {
 
   .e-man {
     animation: dance-rotate 2s linear infinite;
+    &:before {
+      content: '';
+      display: inline-block;
+      width: 100px;
+      height: 147px;
+      background: red;
+      background-image:
+              repeating-linear-gradient(to bottom,red 130px,
+                      blue 230px,
+                      yellow 330px,
+                      green 430px,
+                      pink 530px,
+                      darkblue 630px,
+                      red 730px);
+      background-size: 730px;
+      position: absolute;
+      top: 0px;
+      left: -10px;
+      border-radius: 50%;
+      mix-blend-mode: exclusion;
+      z-index: 20;
+      animation: background-position 7s infinite linear;
+    }
   }
 }
 
@@ -843,6 +866,13 @@ $bubbles: (
   90% {
     transform: translateY(calc(100vh - 200px));
   }
+}
+
+@keyframes  background-position {
+  100% {
+    background-position: 0 730px;
+  }
+
 }
 
 @keyframes dance-body {
