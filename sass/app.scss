@@ -48,11 +48,25 @@ body {
 
 #m1,
 #m2,
-#m3 {
+#m3,
+#m4 {
   bottom: 125px;
   left: -134px;
   position: absolute;
   transition: all 4s linear;
+}
+
+#m4 {
+  bottom: -310px;
+  left: auto;
+  right: 100px;
+  transform: rotate(-23deg);
+  transition-duration: .8s;
+
+  &.active {
+    bottom: -20px;
+    transform: rotate(-23deg);
+  }
 }
 
 button {
