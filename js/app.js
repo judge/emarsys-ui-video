@@ -45,7 +45,7 @@ x.add(function() {
 }, 0);
 
 x.add(function() {
-  speak('Én vagyok a Dávid!', 1);
+  speak('Sziasztok! Dávid vagyok!', 1);
 }, 2000);
 
 x.add(function() {
@@ -57,7 +57,7 @@ x.add(function() {
 }, 0);
 
 x.add(function() {
-  speak('Én vagyok a Judge!', 2);
+  speak('Sziasztok, én meg Judge!', 2);
 }, 3000);
 
 x.add(function() {
@@ -69,7 +69,7 @@ x.add(function() {
 }, 0);
 
 x.add(function() {
-  speak('Én vagyok a másik Dávid!', 3);
+  speak('Sziasztok, én is Dávid vagyok! :)', 3);
 }, 4000);
 
 x.add(function() {
@@ -77,12 +77,12 @@ x.add(function() {
 }, 3000);
 
 x.add(function() {
-  speak('Régen ilyen volt suite', 1);
+  speak('Régen ilyenek voltak az oldalak...', 1);
   $('#screenshot1').addClass('e-canvas__slide-show');
 }, 2000);
 
 x.add(function() {
-  speak('Jöttünk mi, és ilyen lett', 1);
+  speak('...jöttünk mi, és minden sokkal szebb lett! A mi felelősségünk, hogy az összes új dolog ugyanilyen szép legyen.', 1);
   $('#screenshot2').addClass('e-canvas__slide-show');
 }, 5000);
 
@@ -93,45 +93,55 @@ x.add(function() {
 }, 5000);
 
 x.add(function() {
-  speak('Ezeket a technológiákat használjuk', 2);
+  speak('Ezeket az eszközöket és technológiákat használjuk! HTML, CSS, Javascript, Gulp, Jade, SASS...', 2);
   $('#technologies').addClass('e-canvas__slide-show');
 }, 2000);
 
 x.add(function() {
   standby(2);
-}, 3000);
+}, 5000);
 
 x.add(function() {
   $('#technologies').removeClass('e-canvas__slide-show');
-  speak('Mi majdnem az összes csapattal kapcsolatban vagyunk', 3);
+  speak('Mi majdnem az összes csapattal kapcsolatban vagyunk, mert szinte mindennek van felhasználói felülete.', 3);
   $('#bubbles').addClass('e-canvas__slide-show');
   setTimeout(function() {
     $('#m4').addClass('active');
-    }, 6500);
+  }, 8500);
 }, 5000);
 
 x.add(function() {
   standby(3);
-}, 4000);
-
-x.add(function() {
-  $('#bubbles').removeClass('e-canvas__slide-show');
 }, 6000);
 
 x.add(function() {
+  $('#bubbles').removeClass('e-canvas__slide-show');
+}, 5000);
+
+x.add(function() {
   standby(4);
-  $('#m1, #m2, #m3, #m4').addClass('e-dance-hardcore');
+  speak('Hello Siju! Let\'s dance!', 2);
 }, 1000);
+
+x.add(function() {
+  standby(2);
+  $('#m1, #m2, #m3, #m4').addClass('e-dance-hardcore');
+}, 3000);
 
 x.add(function() {
   $('#end').addClass('active');
 }, 13000);
 
-$('#start').on('click', function() {
+$('#start').on('change', function() {
   var music = new Audio('../tetris.mp3');
   music.play();
-  $(this).hide();
-  x.run();
+
+  setTimeout(function() {
+    $('.intro').fadeOut(800, function() {
+      x.run();
+      $('#maintitle').fadeIn();
+    });
+  }, 1000);
 });
 
 function walk(id, where, duration) {

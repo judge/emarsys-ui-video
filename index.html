@@ -5,16 +5,49 @@
     <title>e-video</title>
     <link rel="stylesheet" href="/css/app.css">
     <link href='https://fonts.googleapis.com/css?family=VT323' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Oswald:700" type="text/css">
   </head>
   <body>
 
     <div class="e-video">
 
-      <h2>UI Team</h2>
+      <h2 id="maintitle" style="display: none;">UI Team</h2>
 
-      <button id="start" type="button">
-        Start
-      </button>
+      <div class="intro">
+        <svg viewBox="0 0 150 120" class="svg-defs">
+          <symbol id="s-text">
+            <text>
+              <tspan font-size="20" x="10" y="30">the</tspan>
+              <tspan font-size="30" x="45" y="30">UI</tspan>
+              <tspan font-size="65" x="10" dy="60">TEAM</tspan>
+              <tspan font-size="20" x="10" dy="20">presents</tspan>
+            </text>
+          </symbol>
+
+          <mask id="m-text" maskunits="userSpaceOnUse" maskcontentunits="userSpaceOnUse">
+            <rect width="100%" height="100%" class="mask__shape"></rect>
+            <use xlink:href="#s-text" class="text-mask"></use>
+          </mask>
+        </svg>
+
+        <div class="logo">
+          <div class="background"></div>
+          <svg viewBox="0 0 150 120" class="svg-inverted-mask">
+            <rect width="100%" height="100%" mask="url(#m-text)" class="shape--fill"/>
+            <use xlink:href="#s-text" class="text--transparent" ></use>
+          </svg>
+        </div>
+
+        <label class="button">
+          <input type="checkbox" id="start">
+          <span class="hole">
+            <span class="switch">
+              <span class="one"></span>
+              <span class="zero"></span>
+            </span>
+          </span>
+        </label>
+      </div>
 
       <div class="e-canvas">
         <div id="screenshot1" class="e-canvas__slide"></div>
