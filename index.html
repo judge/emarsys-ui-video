@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>e-video</title>
+    <link rel="stylesheet" href="/css/app.css">
+    <link href='https://fonts.googleapis.com/css?family=VT323' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Oswald:700" type="text/css">
+  </head>
+  <body>
+
+    <div class="e-video">
+
+      <h2 id="maintitle" style="display: none;">UI Team</h2>
+
+      <div class="intro">
+        <svg viewBox="0 0 150 120" class="svg-defs">
+          <symbol id="s-text">
+            <text>
+              <tspan font-size="20" x="10" y="30">the</tspan>
+              <tspan font-size="30" x="45" y="30">UI</tspan>
+              <tspan font-size="65" x="10" dy="60">TEAM</tspan>
+              <tspan font-size="20" x="10" dy="20">presents</tspan>
+            </text>
+          </symbol>
+
+          <mask id="m-text" maskunits="userSpaceOnUse" maskcontentunits="userSpaceOnUse">
+            <rect width="100%" height="100%" class="mask__shape"></rect>
+            <use xlink:href="#s-text" class="text-mask"></use>
+          </mask>
+        </svg>
+
+        <div class="logo">
+          <div class="background"></div>
+          <svg viewBox="0 0 150 120" class="svg-inverted-mask">
+            <rect width="100%" height="100%" mask="url(#m-text)" class="shape--fill"/>
+            <use xlink:href="#s-text" class="text--transparent" ></use>
+          </svg>
+        </div>
+
+        <label class="button">
+          <input type="checkbox" id="start">
+          <span class="hole">
+            <span class="switch">
+              <span class="one"></span>
+              <span class="zero"></span>
+            </span>
+          </span>
+        </label>
+      </div>
+
+      <div class="e-canvas">
+        <div id="screenshot1" class="e-canvas__slide"></div>
+        <div id="screenshot2" class="e-canvas__slide"></div>
+        <div id="technologies" class="e-canvas__slide">
+          <div class="cloud cloud-first">
+            <div class="puffs"></div>
+            <div class="rain">
+              <div class="drop"><img src="technologies/AngularJS_logo.svg.png" alt=""></div>
+              <div class="drop"><img src="technologies/aws.png" alt=""></div>
+              <div class="drop"><img src="technologies/browserify.png" alt=""></div>
+              <div class="drop"><img src="technologies/sass.png" alt=""></div>
+              <div class="drop"><img src="technologies/BrowserStackLogo.png" alt=""></div>
+              <div class="drop"><img src="technologies/chrome.png" alt=""></div>
+              <div class="drop"><img src="technologies/node.png" alt=""></div>
+              <div class="drop"><img src="technologies/safari.png" alt=""></div>
+              <div class="drop"><img src="technologies/html.png" alt=""></div>
+
+              <div class="drop"><img src="technologies/codeship-logo-horizontal.png" alt=""></div>
+              <div class="drop"><img src="technologies/codepen.png" alt=""></div>
+              <div class="drop"><img src="technologies/Virtualbox_logo.png" alt=""></div>
+              <div class="drop"><img src="technologies/firefox-logo-new.png" alt=""></div>
+              <div class="drop"><img src="technologies/riot.png" alt=""></div>
+              <div class="drop"><img src="technologies/svg-w3c-v.svg" alt=""></div>
+            </div>
+          </div>
+          <div class="cloud">
+            <div class="puffs"></div>
+            <div class="rain">
+              <div class="drop"><img src="technologies/codepen.png" alt=""></div>
+              <div class="drop"><img src="technologies/Microsoft_Edge_logo.svg.0.png" alt=""></div>
+              <div class="drop"><img src="technologies/svg-w3c-v.svg" alt=""></div>
+              <div class="drop"><img src="technologies/codeship-logo-horizontal.png" alt=""></div>
+              <div class="drop"><img src="technologies/gulp.png" alt=""></div>
+              <div class="drop"><img src="technologies/firefox-logo-new.png" alt=""></div>
+              <div class="drop"><img src="technologies/github-logo.png" alt=""></div>
+              <div class="drop"><img src="technologies/riot.png" alt=""></div>
+              <div class="drop"><img src="technologies/css.png" alt=""></div>
+
+
+              <div class="drop"><img src="technologies/jade-logo-header.svg" alt=""></div>
+              <div class="drop"><img src="technologies/markdown.png" alt=""></div>
+              <div class="drop"><img src="technologies/Microsoft_Edge_logo.svg.0.png" alt=""></div>
+              <div class="drop"><img src="technologies/json.png" alt=""></div>
+              <div class="drop"><img src="technologies/npm-logo.png" alt=""></div>
+              <div class="drop"><img src="technologies/gulp.png" alt=""></div>
+              <div class="drop"><img src="technologies/sass.png" alt=""></div>
+              <div class="drop"><img src="technologies/Internet-Explorer-logo.png" alt=""></div>
+
+            </div>
+          </div>
+          <div class="cloud cloud-last">
+            <div class="puffs"></div>
+            <div class="rain">
+              <div class="drop"><img src="technologies/Internet-Explorer-logo.png" alt=""></div>
+              <div class="drop"><img src="technologies/markdown.png" alt=""></div>
+              <div class="drop"><img src="technologies/jade-logo-header.svg" alt=""></div>
+              <div class="drop"><img src="technologies/json.png" alt=""></div>
+              <div class="drop"><img src="technologies/npm-logo.png" alt=""></div>
+              <div class="drop"><img src="technologies/sass.png" alt=""></div>
+              <div class="drop"><img src="technologies/Virtualbox_logo.png" alt=""></div>
+              <div class="drop"><img src="technologies/js.png" alt=""></div>
+
+
+              <div class="drop"><img src="technologies/aws.png" alt=""></div>
+              <div class="drop"><img src="technologies/safari.png" alt=""></div>
+              <div class="drop"><img src="technologies/BrowserStackLogo.png" alt=""></div>
+              <div class="drop"><img src="technologies/AngularJS_logo.svg.png" alt=""></div>
+              <div class="drop"><img src="technologies/browserify.png" alt=""></div>
+              <div class="drop"><img src="technologies/chrome.png" alt=""></div>
+              <div class="drop"><img src="technologies/github-logo.png" alt=""></div>
+              <div class="drop"><img src="technologies/node.png" alt=""></div>
+            </div>
+          </div>
+        </div>
+        <div id="bubbles" class="e-canvas__slide">
+          <div class="bubble bubble-main" data-team="UI Team">
+            <div class="bubble" data-team="UX Team"></div>
+            <div class="bubble" data-team="Self Service"></div>
+            <div class="bubble" data-team="Reporting"></div>
+            <div class="bubble" data-team="Smart Insight"></div>
+            <div class="bubble" data-team="Rapid Response"></div>
+            <div class="bubble bubble-more" data-team="&#8230;"></div>
+            <div class="bubble" data-team="Segmentation Team"></div>
+            <div class="bubble" data-team="Management"></div>
+            <div class="bubble" data-team="Integrations"></div>
+            <div class="bubble" data-team="Suite Support"></div>
+            <div class="bubble" data-team="Security"></div>
+            <div class="bubble" data-team="Automation Center"></div>
+            <div class="bubble" data-team="Content Team"></div>
+            <div class="bubble" data-team="3rd party"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="e-textbox" id="textbox"></div>
+
+      <div id="end">
+        <span class="char1">T</span>
+        <span class="char2">h</span>
+        <span class="char3">e</span>
+        <span class="char4">&nbsp;</span>
+        <span class="char5">E</span>
+        <span class="char6">n</span>
+        <span class="char7">d</span>
+        <span class="char8">&nbsp;</span>
+        <span class="char9">;</span>
+        <span class="char10">)</span>
+      </div>
+
+      <div id="m1">
+        <div class="e-man e-man-d1" id="m1man">
+          <div class="e-man__head"></div>
+          <div class="e-man__body">
+            <div class="e-man__arm e-man__arm-left">
+              <div class="e-man__bottomarm e-man__bottomarm-left"></div>
+            </div>
+            <div class="e-man__arm e-man__arm-right">
+              <div class="e-man__bottomarm e-man__bottomarm-right"></div>
+            </div>
+            <div class="e-man__shirt"></div>
+          </div>
+          <div class="e-man__legs">
+            <div class="e-man__pants"></div>
+            <div class="e-man__leg e-man__leg-left"></div>
+            <div class="e-man__leg e-man__leg-right"></div>
+          </div>
+        </div>
+      </div>
+
+      <div id="m2">
+        <div class="e-man e-man-jdg" id="m2man">
+          <div class="e-man__head"></div>
+          <div class="e-man__body">
+            <div class="e-man__arm e-man__arm-left">
+              <div class="e-man__bottomarm e-man__bottomarm-left"></div>
+            </div>
+            <div class="e-man__arm e-man__arm-right">
+              <div class="e-man__bottomarm e-man__bottomarm-right"></div>
+            </div>
+            <div class="e-man__shirt"></div>
+          </div>
+          <div class="e-man__legs">
+            <div class="e-man__pants"></div>
+            <div class="e-man__leg e-man__leg-left"></div>
+            <div class="e-man__leg e-man__leg-right"></div>
+          </div>
+        </div>
+      </div>
+
+      <div id="m3">
+        <div class="e-man e-man-d2" id="m3man">
+          <div class="e-man__head"></div>
+          <div class="e-man__body">
+            <div class="e-man__arm e-man__arm-left">
+              <div class="e-man__bottomarm e-man__bottomarm-left"></div>
+            </div>
+            <div class="e-man__arm e-man__arm-right">
+              <div class="e-man__bottomarm e-man__bottomarm-right"></div>
+            </div>
+            <div class="e-man__shirt"></div>
+          </div>
+          <div class="e-man__legs">
+            <div class="e-man__pants"></div>
+            <div class="e-man__leg e-man__leg-left"></div>
+            <div class="e-man__leg e-man__leg-right"></div>
+          </div>
+        </div>
+      </div>
+
+      <div id="m4">
+        <div class="e-man e-man-speak e-man-siju" id="m4man">
+          <div class="e-man__head"></div>
+          <div class="e-man__body">
+            <div class="e-man__arm e-man__arm-left">
+              <div class="e-man__bottomarm e-man__bottomarm-left"></div>
+            </div>
+            <div class="e-man__arm e-man__arm-right">
+              <div class="e-man__bottomarm e-man__bottomarm-right"></div>
+            </div>
+            <div class="e-man__shirt"></div>
+          </div>
+          <div class="e-man__legs">
+            <div class="e-man__pants"></div>
+            <div class="e-man__leg e-man__leg-left"></div>
+            <div class="e-man__leg e-man__leg-right"></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
