@@ -133,7 +133,7 @@ x.add(function() {
 }, 13000);
 
 $('#start').on('change', function() {
-  var music = new Audio('../tetris.mp3');
+  var music = new Audio('tetris.mp3');
   music.play();
 
   setTimeout(function() {
